@@ -6,7 +6,7 @@
 11 __label__incendios_forestales
 14 __label__emision_C02
 21 __label__temperatura_media
-22 __label__offtopic
+22 __label__offtopicg
 25 __label__offtopic
 26 __label__simetria_hemisferios
 27 __label__offtopic
