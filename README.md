@@ -52,10 +52,17 @@ Al aplicar TexTiling hubo algunos segmentos que daban error porque eran demasiad
 Finalmente, tras aplicar TextTiling a cada segmento, eliminé los dobles saltos de línea y añadí todos los segmentos temáticos de cada noticia a una lista común. En total obtuve 548 segmentos.
 
 ### 3. Aplicar clustering (el algoritmo que prefieras) a los segmentos obtenidos para toda la colección.
-Inicialmente probé a utilizar el algoritmo de affinity-propagation para hacer el clustering y obtuve alrededor de 120 clusteres, según la ejecución. Se puede ver un ejemplo en: []
+Inicialmente probé a utilizar el algoritmo de affinity-propagation para hacer el clustering y obtuve alrededor de 120 clusteres, según la ejecución. Se puede ver un ejemplo en: [data/clusters-affinity-propagation.txt](https://github.com/UO264637/ws-mineria-textos/blob/main/data/clusters-affinity-propagation.txt). Sin embargo, echando un vistazo a los clusteres, me parecieron demasiados y algunos podrían ser agrupados, como el 81 y 82 que tratan del Apolo y viajes a la Luna.
+
+Por esta razón decidí probar con el algoritmo de k-means, inicialmente con 60 clústeres: [data/clusters-k-means.txt](https://github.com/UO264637/ws-mineria-textos/blob/main/data/clusters-k-means.txt). Tras revisar los clústeres decidí incrementar el número a 70 porque había algunos clústeres como el 13 o el 22 que mezclaban temas muy distintos.
+
+Decidí quedarme con 70 clústeres ([data/clusters-k-means-definitive.txt](https://github.com/UO264637/ws-mineria-textos/blob/main/data/clusters-k-means-definitive.txt)) porque las temáticas parecían bastante claras y, aunque había algunos clusteres que podrían agruparse (10-incendios y 11-superficie quemada) no era un número excesivo y me parecieron más sencillos de etiquetar.
+
+En el mismo script (script1-3.py) vecroricé los seggmentos temáticos con TfidfVectorizer tras eliminar las palabras vacías con spacy. Después apliqué el algoritmo de k-means con 70 clústeres como mencioné anteriormente y almacené los clústeres y los segmentos con pickle en el siguiente script ya que los algoritmos de clústering tienen un componente aleatorio. Finalmente, guardé en un .txt el resultado del clustering con algunos fragmentos de los segmentos de cada clúster para poder etiquetarlos manualmente.
+
+### 4. Seleccionar manualmente aquellos clusters que resulten más prometedores por los términos y los documentos representativos. Asignarles una etiqueta autodescriptiva (p.ej., “sequía”, “ola de calor”, “incendio”, “temperaturas extremas”, “carbón”, “hidrógeno”, etc.) En caso de duda, contactar con dani@uniovi.es para consensuar una etiqueta.
 
 
-Seleccionar manualmente aquellos clusters que resulten más prometedores por los términos y los documentos representativos. Asignarles una etiqueta autodescriptiva (p.ej., “sequía”, “ola de calor”, “incendio”, “temperaturas extremas”, “carbón”, “hidrógeno”, etc.) En caso de duda, contactar con dani@uniovi.es para consensuar una etiqueta.
 Crear con los documentos de esos clusters y las etiquetas aportadas manualmente un conjunto de entrenamiento y otro de test para un clasificador. ¡Atención! El clasificador no es multi-etiqueta puesto que cada segmento debería tratar única y exclusivamente de un tema principal (después de todo es el objetivo de TextTiling).
 Entrenar y evaluar dicho clasificador.
 A partir de aquí tomar la colección con la que no se trabajó (es decir, si la última cifra de tu DNI es par te toca “no negacionistas” y si es impar “negacionistas”).
