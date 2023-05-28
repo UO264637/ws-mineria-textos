@@ -36,7 +36,7 @@ with open("training-segments.txt", "w", encoding='utf-8') as file:
        file.write(segment)
 
 
-clasificador = fasttext.train_supervised("labeled-segments.txt", epoch=100, loss="hs") #wordNgrams=2,
+clasificador = fasttext.train_supervised("labeled-segments.txt", epoch=30, lr=1.0) #wordNgrams=2,
 
 def print_results(N, p, r):
     print("N\t" + str(N))
@@ -44,7 +44,6 @@ def print_results(N, p, r):
     print("R@{}\t{:.3f}".format(1, r))
 
 print_results(*clasificador.test('test-segments.txt'))
-alggo = clasificador.test('test-segments.txt')
+results = clasificador.test('test-segments.txt')
 
-print()
-print(alggo)
+clasificador.save_model("clasificador.bin")
