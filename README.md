@@ -90,6 +90,70 @@ En este script etiqueto los segmentos de cada noticia generados con el script an
 #### Apartados 8 f - script8f.py
 He creado un pequeño script para seleccionar 10 noticias aleatorias del archivo anterior. Se pueden encontrar en: [10noticias.ndjson](https://github.com/UO264637/ws-mineria-textos/blob/main/data/10noticias.ndjson)
 
+#### Apartado 8 g
 
 
+Sólamente en 4 de las 10 noticias la eriqueta con mayor porcentaje de aparición coincide con la etiqueta asignada manualmente, en el resto de casos la etiueta asignada manualmente ni siquiera aparece en la lista de etiquetas asignadas por el clasificador. Por tanto, la preicsión global sería de un 40%.
 
+A continuación, calcularé la precisión por etiqueta. Si la etiqueta del clasificador coincide con la etiqueta principal de la noticia o alguna de las secundarias contará como acierto, si no como fallo.
+- __label__sequias
+  - Aciertos:  5
+  - Fallos: 2
+  - Precisión: 71%
+- __label__C02_coches
+  - Aciertos:  1
+  - Fallos: 5
+  - Precisión: 20%
+- __label__emision_C02
+  - Aciertos:  4
+  - Fallos: 1
+  - Precisión: 80%
+- __label__transicion_energetica
+  - Aciertos:  1
+  - Fallos: 2
+  - Precisión: 33%
+- __label__offtopic
+  - Aciertos:  0
+  - Fallos: 4
+  - Precisión: 0%
+- __label__incendios_forestales
+  - Aciertos:  1
+  - Fallos: 2
+  - Precisión: 33%
+- __label__energias_renovables
+  - Aciertos:  2
+  - Fallos: 1
+  - Precisión: 67%
+- __label__estufas_pellets
+  - Aciertos:  0
+  - Fallos: 2
+  - Precisión: 0%
+- __label__biogas
+  - Aciertos:  0
+  - Fallos: 4
+  - Precisión: 0%
+- proliferacion_garrapatas
+  - Aciertos:  0
+  - Fallos: 1
+  - Precisión: 0%
+- __label__deshielo
+  - Aciertos:  0
+  - Fallos: 2
+  - Precisión: 0%
+ - __label__temperatura_media
+  - Aciertos:  0
+  - Fallos: 2
+  - Precisión: 0%
+ - __label__ola_calor
+  - Aciertos:  0
+  - Fallos: 1
+  - Precisión: 0%
+
+# Conclusiones
+El clasificador ha salido bastante mal. Creo que el principal problema es que el conjunto de noticias negacionistas es muy pequeño y al etiquetar solo algunos clusteres se reduce incluso más. Entrenar el clasificador con un tipo de noticias (negacionistas) para clasificar noticias de otro tipo (no negacionistas) podría haber sido otro problema pero creo que, además, el modelo podría haber sido sobreajustado al utilizar un epoch elevado con tan pocos datos.
+
+Creo que el clasificador tiene dificultad para etiquetar noticias que tratan sobre la lucha contra el cambio climático, porque estas noticias tratan de muchos temas secundarios (sequías, emisiones, etc.) que el clasificador sí consigue etiquetar correctamente en la mayoría de casos pero no el tema general. Además, me da la impresión de que los resultados habrían sido mejores si hubiera agrupado las emisiones de CO2 y las emisiones de CO2 de los coches porque en algunas de las noticias aparecen ambos o aparecen intercambiados.
+
+También parece haber problemas con la etiqueta off_topic porque se aplica a varias noticias que no lo son y la única que lo es no tiene la etiqueta. Seguramente el conjunto de segmentos off_topic inicial sea muy pequeño y poco variado tambén, por ejemplo, no había ningun clúster off_topic que tratase de aves y por eso puede que no lo haya identificado como tal.
+
+Una posible solución podría ser entrenar el clasificador con una mayor cantidad de datos, pero creo que
