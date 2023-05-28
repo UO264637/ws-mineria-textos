@@ -1,0 +1,96 @@
+Noticia 1
+https://www.lne.es/medio-ambiente/2022/08/08/cinco-paises-europeos-impulsan-plan-73164135.html
+	Etiquetado manual: __label__sequias
+	Clasificador: {
+			"__label__sequias": 0.75, 
+			"__label__C02_coches": 0.12,
+			"__label__emision_C02": 0.12}
+
+Noticia 2
+https://www.elperiodico.com/es/opinion/20220511/articulo-josep-maria-fonalleras-cambio-climatico-apocalipsis-13643376
+	Etiquetado manual: __label__temperatura_media (__label__emision_C02)
+	Clasificador: {
+		"__label__transicion_energetica": 0.33, 
+		"__label__offtopic": 0.33, 
+		"__label__sequias": 0.33}
+
+Noticia 3
+https://www.farodevigo.es/medio-ambiente/2022/11/13/turberas-congo-secan-liberar-millones-78495497.html
+	Etiquetado manual: __label__sequias (emision_CO2)
+	Clasificador: {
+		"__label__C02_coches": 0.2,
+		"__label__emision_C02": 0.2,
+		"__label__incendios_forestales": 0.2,
+		"__label__sequias": 0.4}
+
+
+Noticia 4
+https://elpais.com/planeta-futuro/red-de-expertos/2023-01-01/guia-para-un-mundo-mas-sostenible-en-2023.html
+	Etiquetado manual: __label__lucha_cambio_climatico (__label__incendios_forestales, __label__sequias, __label__energias_renovables, __label__emision_C02)
+	Clasificador: {
+		"__label__incendios_forestales": 0.09,
+		"__label__energias_renovables": 0.18,
+		"__label__C02_coches": 0.09,
+		"__label__emision_C02": 0.09,
+		"__label__offtopic": 0.45,
+		"__label__sequias": 0.09}
+
+Noticia 5
+https://cincodias.elpais.com/cincodias/2022/08/04/companias/1659623659_867451.html
+	Etiquetado manual: __label__energias_renovables (__label__emision_C02)
+	Clasificador: {"
+		__label__energias_renovables": 0.67,
+		"__label__C02_coches": 0.33}
+
+Noticia 6
+https://www.elperiodico.com/es/sociedad/20221106/cuanto-cuesta-consumo-sostenible-cambio-climatico-78138656
+	Etiquetado manual: __label__lucha_cambio_climatico (__label__C02_coches, __label__emision_C02)
+	Clasificador: {
+		"__label__estufas_pellets": 0.29,
+		"__label__C02_coches": 0.29,
+		"__label__biogas": 0.14,
+		"__label__temperatura_media": 0.14,
+		"__label__emision_C02": 0.14}
+
+Noticia 7
+https://elpais.com/sociedad/2022-10-31/digitalizacion-para-un-planeta-mas-verde.html
+	Etiquetado manual: __label__lucha_cambio_climatico (__label__transicion_energetica, __label__ola_calor, __label__sequias, __label__emision_C02)
+	Clasificador: {
+		"__label__offtopic": 0.33,
+		"__label__transicion_energetica": 0.07,
+		"__label__emision_C02": 0.2,
+		"__label__biogas": 0.2,
+		"__label__proliferacion_garrapatas": 0.07,
+		"__label__sequias": 0.13}
+
+Noticia 8
+https://www.lavanguardia.com/vida/junior-report/20220601/8305660/incendios-engullen-bosques.html
+	Etiquetado manual: __label__incendios_forestales (__label__sequias)
+	Clasificador: {
+		"__label__C02_coches": 0.17,
+		"__label__offtopic": 0.17,
+		"__label__estufas_pellets": 0.17,
+		"__label__sequias": 0.17,
+		"__label__deshielo": 0.17,
+		"__label__incendios_forestales": 0.17}
+
+Noticia 9
+https://www.farodevigo.es/galicia/2022/08/19/agosto-vuelve-agosto-galicia-chaqueta-73700868.html
+	Etiquetado manual: __label__ola_calor
+	Clasificador: {
+		"__label__temperatura_media": 0.2,
+		"__label__sequias": 0.2,
+		"__label__deshielo": 0.2,
+		"__label__energias_renovables": 0.2,
+		"__label__biogas": 0.2}
+ 
+
+Noticia 10
+https://www.lne.es/medio-ambiente/2022/09/30/dia-aves-90-especies-espanolas-76341240.html
+offtopic
+	Etiquetado manual: __label__offtopic
+	Clasificador: {
+		"__label__biogas": 0.6,
+		"__label__transicion_energetica": 0.2,
+		"__label__ola_calor": 0.2}
+	
